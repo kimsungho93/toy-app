@@ -1,0 +1,25 @@
+@use 'styles/theme';
+@import url('@fontsource-variable/geist/index.css');
+
+@keyframes icon-pop {
+  0%   { transform: scale(1)    rotate(0deg); }
+  30%  { transform: scale(1.45) rotate(-18deg); }
+  60%  { transform: scale(0.88) rotate(10deg); }
+  80%  { transform: scale(1.08) rotate(-5deg); }
+  100% { transform: scale(1)    rotate(0deg); }
+}
+
+* {
+  border-color: var(--border);
+  outline-color: color-mix(in oklch, var(--ring), transparent 50%);
+}
+
+html {
+  font-family: 'Geist Variable', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  margin: 0;
+}

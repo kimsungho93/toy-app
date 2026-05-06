@@ -1,0 +1,228 @@
+@use 'styles/tokens' as *;
+@use 'styles/mixins' as *;
+
+.login-form {
+  width: 100%;
+  max-width: 520px;
+  margin-top: 26px;
+
+  .fieldLabel {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    height: 62px;
+    padding: 0 24px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(106, 137, 184, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 28px rgba(27, 66, 122, 0.08);
+    backdrop-filter: blur(4px);
+    transition: all $dur-base;
+
+    &.focused {
+      border-color: $brand-blue;
+      background: rgba(237, 246, 255, 0.92);
+      box-shadow:
+        0 0 0 3px rgba(46, 139, 255, 0.18),
+        0 12px 30px rgba(27, 66, 122, 0.14);
+      transform: scale(1.015);
+    }
+  }
+
+  .fieldIcon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    transition: color $dur-base;
+    color: $text-icon-muted;
+
+    &.focused {
+      color: $brand-blue;
+      animation: icon-pop $dur-slow $ease-spring both;
+    }
+  }
+
+  .fieldInput {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: $text-primary;
+
+    &::placeholder {
+      color: $text-placeholder;
+    }
+  }
+
+  .errorText {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ef4444;
+  }
+
+  .actionRow {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: 1fr 42% 1fr;
+    align-items: center;
+    column-gap: 8px;
+  }
+
+  .toggleLabel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+
+    @include lg {
+      gap: 10px;
+    }
+  }
+
+  .toggleHiddenInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .toggleTrack {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 36px;
+    height: 20px;
+    border-radius: 9999px;
+    transition: all $dur-mid;
+    background: rgba(106, 137, 184, 0.22);
+
+    &.active {
+      background: linear-gradient(135deg, $brand-blue 0%, $brand-blue-deep 100%);
+      box-shadow: 0 2px 10px rgba(8, 100, 255, 0.38);
+    }
+
+    @include lg {
+      width: 44px;
+      height: 24px;
+    }
+  }
+
+  .toggleThumb {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background: white;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+    transition: transform $dur-mid;
+    transform: translateX(3px);
+
+    &.active {
+      transform: translateX(19px);
+    }
+
+    @include lg {
+      width: 18px;
+      height: 18px;
+
+      &.active {
+        transform: translateX(23px);
+      }
+    }
+  }
+
+  .toggleText {
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 700;
+    color: $text-deep;
+
+    @include lg {
+      font-size: 15px;
+    }
+  }
+
+  .submitButton {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(135deg, $brand-blue 0%, $brand-blue-deep 100%);
+    box-shadow: 0 14px 26px rgba(8, 100, 255, 0.32);
+    transition: all $dur-base $ease-spring;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 24px 40px rgba(8, 100, 255, 0.5);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    @include lg {
+      height: 58px;
+      font-size: 20px;
+    }
+  }
+
+  .linkNav {
+    margin-top: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: $text-deep;
+
+    @include lg {
+      gap: 26px;
+      font-size: 17px;
+    }
+  }
+
+  .navButton {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .navLink {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .divider {
+    display: block;
+    height: 16px;
+    width: 1px;
+    background: $divider;
+  }
+}

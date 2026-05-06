@@ -1,0 +1,383 @@
+@use 'styles/tokens' as *;
+@use 'styles/mixins' as *;
+
+@mixin bubble-style {
+  position: absolute;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(63, 142, 255, 0.9), rgba(150, 203, 255, 0.25));
+  box-shadow: 0 12px 26px rgba(25, 110, 255, 0.18);
+}
+
+.login-page {
+  position: relative;
+  min-height: 100svh;
+  overflow-x: clip;
+  padding: 40px 24px;
+  color: $text-primary;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(41, 126, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 52% 68%, rgba(37, 111, 255, 0.14), transparent 25%),
+    linear-gradient(120deg, #ffffff 0%, #ffffff 42%, #eff7ff 100%);
+
+  @include lg {
+    overflow: hidden;
+    padding: 52px 64px;
+  }
+
+  .decoFilled {
+    pointer-events: none;
+    position: absolute;
+    bottom: -220px;
+    right: -180px;
+    width: 900px;
+    height: 900px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, rgba(46, 130, 255, 0.18), rgba(46, 130, 255, 0.04));
+  }
+
+  .decoOutlined {
+    pointer-events: none;
+    position: absolute;
+    bottom: -160px;
+    right: -80px;
+    width: 780px;
+    height: 780px;
+    border-radius: 9999px;
+    border: 2px solid rgba(32, 116, 255, 0.16);
+  }
+
+  .header {
+    position: relative;
+    z-index: $z-content;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include lg {
+      margin-bottom: 76px;
+      margin-left: 10%;
+      gap: 18px;
+    }
+  }
+
+  .brand {
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+    font-size: clamp(28px, 4vw, 48px);
+    letter-spacing: -4px;
+    background: linear-gradient(135deg, $brand-blue-deep-2, $brand-blue-light-2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .content {
+    position: relative;
+    z-index: $z-content;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 32rem;
+    padding-bottom: 50vw;
+
+    @include lg {
+      margin-left: 10%;
+      margin-right: 0;
+      width: 48%;
+      max-width: 720px;
+      padding-bottom: 0;
+    }
+  }
+
+  .headlineGroup {
+    position: relative;
+    margin-bottom: 32px;
+
+    @include lg {
+      margin-bottom: 34px;
+    }
+  }
+
+  .sparkle1 {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: -36px;
+    user-select: none;
+    font-size: 28px;
+    color: $text-sparkle;
+    transform: rotate(12deg);
+
+    @include lg {
+      top: -42px;
+      font-size: 42px;
+    }
+  }
+
+  .sparkle2 {
+    pointer-events: none;
+    position: absolute;
+    left: 40px;
+    top: -52px;
+    user-select: none;
+    font-size: 14px;
+    color: $text-sparkle;
+
+    @include lg {
+      left: 54px;
+      top: -68px;
+      font-size: 20px;
+    }
+  }
+
+  .headlineWrap {
+    position: relative;
+    display: inline-block;
+  }
+
+  .headline {
+    position: relative;
+    white-space: nowrap;
+    font-weight: 900;
+    line-height: 0.95;
+    color: $text-primary;
+    font-size: clamp(38px, 10vw, 118px);
+    letter-spacing: clamp(-3px, -0.5vw, -8px);
+    transform: skewX(-7deg);
+    text-shadow: 0 10px 22px rgba(4, 31, 77, 0.12);
+
+    span {
+      color: $brand-blue-accent;
+    }
+  }
+
+  .underline {
+    position: absolute;
+    border-radius: 9999px;
+    left: 54%;
+    bottom: clamp(-8px, -1.2vw, -18px);
+    width: 43%;
+    height: clamp(8px, 1.2vw, 16px);
+    background: linear-gradient(90deg, #0b64ff, $brand-blue-light);
+    transform: skewX(-18deg);
+    box-shadow: 0 8px 16px rgba(14, 103, 255, 0.24);
+  }
+
+  .accentBars {
+    position: absolute;
+    right: -50px;
+    top: -34px;
+    display: none;
+    gap: 8px;
+    transform: rotate(15deg);
+
+    @include lg {
+      display: flex;
+    }
+  }
+
+  .barTall {
+    display: block;
+    height: 42px;
+    width: 12px;
+    border-radius: 9999px;
+    background: $brand-blue-accent;
+  }
+
+  .barShort {
+    display: block;
+    height: 28px;
+    width: 12px;
+    margin-top: 8px;
+    border-radius: 9999px;
+    background: $brand-blue-accent;
+  }
+
+  .tagline {
+    margin-top: 20px;
+    font-weight: 700;
+    line-height: 1.45;
+    color: $text-muted;
+    font-size: clamp(14px, 2.4vw, 29px);
+    letter-spacing: -1px;
+
+    strong {
+      font-weight: 900;
+      color: $brand-blue-accent;
+    }
+
+    @include lg {
+      margin-top: 44px;
+    }
+  }
+
+  .featureStrip {
+    position: absolute;
+    z-index: $z-content;
+    display: none;
+    height: 96px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0 28px;
+    left: calc(58px + 10vw);
+    bottom: 24px;
+    width: clamp(560px, 44vw, 720px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 18px 50px rgba(20, 74, 145, 0.12);
+    backdrop-filter: blur(12px);
+
+    @include xl {
+      display: flex;
+    }
+  }
+
+  .featureItem {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 0%;
+    align-items: center;
+    gap: 16px;
+
+    & + & {
+      border-left: 1px solid #d7e2f2;
+      padding-left: 24px;
+    }
+  }
+
+  .featureIcon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    color: $brand-blue-accent;
+  }
+
+  .featureTitle {
+    display: block;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+    color: $text-strong;
+  }
+
+  .featureSub {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: $text-sub;
+  }
+
+  .mascotArea {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: $z-base;
+    width: 100%;
+    height: 65vw;
+
+    @include lg {
+      width: 55%;
+      height: 100%;
+    }
+  }
+
+  .bubbleSmall {
+    @include bubble-style;
+    display: none;
+    width: 20px;
+    height: 20px;
+    left: 8%;
+    top: 51%;
+
+    @include lg {
+      display: block;
+    }
+  }
+
+  .bubbleMid {
+    @include bubble-style;
+    display: none;
+    width: 58px;
+    height: 58px;
+    left: 20%;
+    top: 64%;
+    opacity: 0.45;
+
+    @include lg {
+      display: block;
+    }
+  }
+
+  .bubbleBig {
+    @include bubble-style;
+    width: 72px;
+    height: 72px;
+    right: 3%;
+    top: 56%;
+    opacity: 0.55;
+  }
+
+  .mascotSparkle {
+    position: absolute;
+    right: 8%;
+    top: 38%;
+    z-index: $z-base;
+    display: none;
+    user-select: none;
+    font-size: 36px;
+    color: $text-sparkle-blue;
+    opacity: 0.7;
+
+    @include lg {
+      display: block;
+    }
+  }
+
+  .mascotDots {
+    position: absolute;
+    right: 7%;
+    top: 45%;
+    z-index: $z-base;
+    display: none;
+    gap: 14px;
+
+    @include lg {
+      display: flex;
+    }
+  }
+
+  .mascotDot {
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: $dot-blue;
+    opacity: 0.55;
+  }
+
+  .mascotImage {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 2;
+    height: 100%;
+    width: auto;
+    transform: translateX(-50%);
+    object-fit: contain;
+    object-position: bottom;
+    filter: drop-shadow(0 24px 36px rgba(5, 30, 70, 0.18));
+
+    @include lg {
+      left: auto;
+      right: 22px;
+      max-height: 92vh;
+      width: min(680px, 88%);
+      transform: translateX(0);
+    }
+  }
+}

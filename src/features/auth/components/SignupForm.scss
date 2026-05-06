@@ -1,0 +1,100 @@
+@use 'styles/tokens' as *;
+
+.signup-form {
+  width: 100%;
+  max-width: 520px;
+  margin-top: 26px;
+
+  .fieldLabel {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    height: 62px;
+    padding: 0 24px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(106, 137, 184, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 28px rgba(27, 66, 122, 0.08);
+    backdrop-filter: blur(4px);
+  }
+
+  .fieldIcon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    color: $text-icon-muted;
+  }
+
+  .fieldInput {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: $text-primary;
+
+    &::placeholder {
+      color: $text-placeholder;
+    }
+  }
+
+  .errorText {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ef4444;
+  }
+
+  .submitButton {
+    margin-top: 8px;
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(135deg, $brand-blue 0%, $brand-blue-deep 100%);
+    box-shadow: 0 14px 26px rgba(8, 100, 255, 0.32);
+    transition: transform $dur-fast ease-in-out, box-shadow $dur-fast ease-in-out;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  .linkNav {
+    margin-top: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    font-size: 17px;
+    font-weight: 700;
+    color: $text-deep;
+  }
+
+  .navLink {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .divider {
+    display: block;
+    height: 16px;
+    width: 1px;
+    background: $divider;
+  }
+}

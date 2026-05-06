@@ -1,0 +1,61 @@
+.menu-node-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  padding: 4px 4px 4px 0;
+  list-style: none;
+  cursor: pointer;
+
+  &.focused {
+    background: var(--muted);
+  }
+
+  &.editing {
+    background: transparent;
+  }
+
+  .toggle {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--muted-foreground);
+
+    &.invisible {
+      visibility: hidden;
+    }
+  }
+
+  .editInput {
+    flex: 1;
+    border-radius: 8px;
+    border: 1px solid var(--input);
+    background: transparent;
+    padding: 2px 8px;
+    font-size: 14px;
+    outline: none;
+    color: inherit;
+
+    &:focus-visible {
+      border-color: var(--ring);
+      box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring), transparent 50%);
+    }
+  }
+
+  .label {
+    flex: 1;
+    font-size: 14px;
+    user-select: none;
+  }
+
+  .placeholder {
+    color: var(--muted-foreground);
+    font-style: italic;
+  }
+}

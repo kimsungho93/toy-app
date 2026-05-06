@@ -1,0 +1,50 @@
+.system-layout {
+  display: flex;
+  gap: 24px;
+
+  .aside {
+    width: 192px;
+    flex-shrink: 0;
+  }
+
+  .asideTitle {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  .subNav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .subNavLink {
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--muted-foreground);
+
+    &:hover {
+      background: color-mix(in oklch, var(--muted), transparent 50%);
+    }
+
+    &.active {
+      background: var(--muted);
+      color: var(--foreground);
+      font-weight: 500;
+
+      &:hover {
+        background: var(--muted);
+      }
+    }
+  }
+
+  .mainArea {
+    flex: 1;
+  }
+}

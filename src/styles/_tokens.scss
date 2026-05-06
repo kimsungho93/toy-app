@@ -1,0 +1,42 @@
+// 정적 토큰 — 런타임에 변하지 않는 값들
+
+// 브레이크포인트
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// z-index 레이어
+$z-base: 1;
+$z-content: 10;
+$z-overlay: 100;
+
+// 트랜지션 타이밍
+$dur-fast: 0.18s;
+$dur-base: 0.2s;
+$dur-mid: 0.25s;
+$dur-slow: 0.42s;
+
+// 이징
+$ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// 브랜드 팔레트 (다크모드 무관)
+$brand-blue: #2e8bff;
+$brand-blue-deep: #075fff;
+$brand-blue-accent: #126cff;
+$brand-blue-light: #1e8bff;
+$brand-blue-light-2: #1d8cff;
+$brand-blue-deep-2: #0f61ff;
+
+// 인증 페이지 텍스트 톤 (다크모드 무관 — 마케팅 영역 고정 톤)
+$text-primary: #071b3a;
+$text-strong: #0a2246;
+$text-muted: #10264a;
+$text-deep: #0d2750;
+$text-sub: #52657f;
+$text-placeholder: #a5b2ca;
+$text-icon-muted: #8da0bf;
+$text-sparkle: #061b3f;
+$text-sparkle-blue: #357fff;
+$dot-blue: #3a86ff;
+
+// 분리선
+$divider: #c5d2e5;
